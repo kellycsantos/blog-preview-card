@@ -3,7 +3,6 @@ import { ReactComponent as Logo } from "../assets/illustration-article.svg";
 
 export default function CardPreview({
   tag,
-  data,
   title,
   preview,
   avatar,
@@ -22,7 +21,7 @@ export default function CardPreview({
       <span className="label">{tag}</span>
       <p>Published {dayPost} {monthPost} {yearPost} </p>
       <h1>{title}</h1>
-      <p>{preview}</p>
+      <p className="preview">{preview}</p>
       <div className="user">
         <img src={avatar} /> <p >{name}</p>
       </div>
