@@ -9,13 +9,18 @@ export default function CardPreview({
   avatar,
   name,
 }) {
+
+  const dayPost = new Date().getDate()
+  const monthPost = new Date().toLocaleString('default', { month: 'long' });
+  const yearPost = new Date().getFullYear()
+
   return (
     <div className="Card">
       <div className="cover">
         <Logo />
       </div>
       <span className="label">{tag}</span>
-      <p>Published 23 Jan 2023 </p>
+      <p>Published {dayPost} {monthPost} {yearPost} </p>
       <h1>{title}</h1>
       <p>{preview}</p>
       <div className="user">
