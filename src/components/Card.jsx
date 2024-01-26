@@ -1,30 +1,29 @@
-// import capa from './src/assets/illustration-article.svg'
 import "./style.css";
-// import Logo from "../assets/illustration-article.svg";
 import { ReactComponent as Logo } from "../assets/illustration-article.svg";
-
 
 export default function CardPreview({
   tag,
-  data,
   title,
   preview,
   avatar,
   name,
 }) {
+
+  const dayPost = new Date().getDate()
+  const monthPost = new Date().toLocaleString('default', { month: 'long' });
+  const yearPost = new Date().getFullYear()
+
   return (
     <div className="Card">
-        <div className="cover">
-      <Logo/>
-
-        </div>
-      {/* <img scr={Logo} alt="blog-cover" /> */}
+      <div className="cover">
+        <Logo />
+      </div>
       <span className="label">{tag}</span>
-      <p>Published 23 Jan 2023 </p>
+      <p>Published {dayPost} {monthPost} {yearPost} </p>
       <h1>{title}</h1>
-      <p>{preview}</p>
-      <div>
-        <img src={avatar} /> <p>{name}</p>
+      <p className="preview">{preview}</p>
+      <div className="user">
+        <img src={avatar} /> <p >{name}</p>
       </div>
     </div>
   );
